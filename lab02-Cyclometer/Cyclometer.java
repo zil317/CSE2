@@ -31,12 +31,12 @@ distanceTrip1=countsTrip1*wheelDiameter*PI;
 //(for each count, a rotation of the wheel travels 
 //the diamter in inches times PI)
 distanceTrip1/=inchesPerFoot*feetPerMile; // Gives distance in miles 
-distanceTrip2=countsTrip2*wheelDiameter*PI/inchesPerFoot/feetPerMile;
+distanceTrip2=countsTrip2*wheelDiameter*PI/inchesPerFoot/feetPerMile; //Gives in trip 2 by calculation of counts and wheel diameter
 totalDistance=distanceTrip1+distanceTrip2;
 //Print out the output data.
-System.out.println("Trip 1 was "+distanceTrip1+" miles");
-System.out.println("Trip 2 was "+distanceTrip2+" miles");
-System.out.println("The total distance was"+totalDistance+" miles");
+System.out.println("Trip 1 was "+distanceTrip1+" miles"); //print out the distance of trip 1 by adding the distance
+System.out.println("Trip 2 was "+distanceTrip2+" miles");//print out the distance of trip 2 by adding the distance
+System.out.println("The total distance was"+totalDistance+" miles"); //print out the total distance by adding distance
 
   }// end of main method
 }// end of class
