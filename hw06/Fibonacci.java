@@ -12,7 +12,7 @@ public class Fibonacci{
         
        
 
-    System.out.print("Entire the second number in the sequence: "); //ask user to input the second number in the sequence 
+    System.out.print("Enter the second number in the sequence: "); //ask user to input the second number in the sequence 
         while (!scan.hasNextInt()){
             scan.next();
             System.out.print("Please enter another integer "); // if input is not an integer, ask user to input again
@@ -20,7 +20,7 @@ public class Fibonacci{
         int x = scan.nextInt(); //cast user's input
         
 
-    System.out.print("Entire the second number in the sequence: "); //ask user to input the second number in the sequence 
+    System.out.print("Enter the second number in the sequence: "); //ask user to input the second number in the sequence 
         while (!scan.hasNextInt()){
             scan.next();
             System.out.print("Please enter another integer "); // if input is not an integer, ask user to input again
