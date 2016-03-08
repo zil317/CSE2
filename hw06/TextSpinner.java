@@ -1,4 +1,6 @@
-
+//Zihan Liu 
+//CSE2 hw06 Program3
+//The program is used to create a "spinner" that is used to indicate progress
 
 import java.util.Scanner;
 public class TextSpinner{
@@ -6,11 +8,11 @@ public class TextSpinner{
    			public static void main(String[] args) {
 
  Scanner myScanner = new Scanner(System.in ); //declare an instance of the Scanner object
- while(true){
-     System.out.print("\b/");
-     System.out.print("\b-");
-     System.out.print("\b\\");
-     System.out.print("\b|");
+ while(true){  //infinite while loop
+     System.out.print("\b/"); //first print /
+     System.out.print("\b-"); //then print -
+     System.out.print("\b\\"); //then print \
+     System.out.print("\b|"); //then print |
      
  }
    			}

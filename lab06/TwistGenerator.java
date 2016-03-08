@@ -47,12 +47,8 @@ public class TwistGenerator{
         else{
             System.out.print("not in the range");
         }
-            
-            
             }
-            
-            
-            
+    
             
         }
        
