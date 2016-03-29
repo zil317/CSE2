@@ -12,33 +12,21 @@ public class Bowtie{
         int k;
        
         
- while (j< nStars){
-     i=0;
-      
-      while (i< nStars-2*j){
-          k=0;
-         
-          while (k<j){
-              System.out.println(" ");
-          }
-          System.out.println("*");
-              
-          }
-         // System.out.println("Test i"+i);
-        //  System.out.println("Test j"+j);
-          //if(i<j){
-          //System.out.print(" ");
-        //  }
-    
-          //else{
-           // System.out.print("*");
-          //}
-            i++;
-        }
-     
-        System.out.println();
-        j++;
+ while (j < nStars){
+     i=0; k=0;
+     while(i<=j-1){
+         System.out.print(" ");
+         i++;
+     }
+     while(k < nStars-2*j){
+         System.out.print("*");
+         k++;
+     }
+     System.out.println("");
+     j++;
  }
+ 
+    }
         
     
  }

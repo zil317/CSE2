@@ -12,7 +12,7 @@ public class RunFactorial{
       
   boolean incorrectinput = true;
   while (incorrectinput){
-      if(scan.hasNextInt()){ //To ask for input that is integer 
+      if(scan.hasNext()){ //To ask for input that is integer 
           int x = scan.nextInt(); //cast the input from user
           int y =(int)x;
           if(x<9 || x>16){    
