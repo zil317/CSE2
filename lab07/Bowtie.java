@@ -24,6 +24,12 @@ public class Bowtie{
      }
      System.out.println("");
      j++;
+     
+     
+     while()
+     
+     
+     
  }
  
     }
