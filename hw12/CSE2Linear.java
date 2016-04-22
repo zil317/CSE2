@@ -18,34 +18,33 @@ public class CSE2Linear{
         int y=0, z=0;
         
         for (int i=0; i<15; i++){
-            
-            if(scan.hasNextInt()){
-                input= scan.nextInt();
-                if(input<0||input>100){
-                    System.out.println("Not in the ranger from 0 to 100."); //If the input is out of ranger, print out error message
-                }
-                else if(input< input1){
-                    System.out.println("The int entered is not greater than than or equal to the last integer."); //if the next input is smaller than the first input, print out error message
-                }
-                else{
-                    array[i]=input; //accept input into the array 
-                }
-                input1=input;
-            }
-            else{
+            while(!scan.hasNextInt()){
+                scan.next();
                 System.out.println("The entered is not an integer"); //print out error message if input is not an integer
             }
+            input= scan.nextInt();
+            while(input<0||input>100){
+                System.out.println("Not in the ranger from 0 to 100."); //If the input is out of ranger, print out error message
+                input= scan.nextInt();
+            }
   
+            while(input< input1){
+                System.out.println("The int entered is not greater than than or equal to the last integer."); //if the next input is smaller than the first input, print out error message
+                input= scan.nextInt();
+            }
+            array[i]=input; //accept input into the array 
+            input1=input;
+            
         }
         
-        String out1="Sorted 15 ints for final grades in CSE2: ";
+        String out1="Enter 15 ascending ints for final grades in CSE2: ";
   	    out1+=listArray(array); //return a string of the form "2 3 -9"  
   	    System.out.println(out1);
 
         
         System.out.println("Please enter a grade to search: "); // prompt user to enter a grade to search 
         y= scan.nextInt();
-        int m= linear(array, y); //enter the method of linear search 
+        binarysearch(array, y); 
         
         int []array2=scramble(array);  //enter the method to scramble the array 
         
@@ -71,25 +70,34 @@ public class CSE2Linear{
 	     return out;
     }
         
+
         
-        public static int linear(int[]array, int y ){
-            boolean incorrectinput = true;
+        public static void binarysearch (int[]array, int y) { //binary search the grade in the sorted array
+            int low=0;
+            int high= array.length-1;
+            int mid=0;
             int i=0;
-            for(i=0; i<15; i++){
-                if(y == array[i]){ //if the entered grade equal to the a grade in the array, print out the following
-                      incorrectinput =false; 
-                     System.out.println("The grade is found.");
-                     System.out.println("The number of iterations used is: "+i);
-                }
-            }
             
-            if (incorrectinput == true){
-                System.out.println("The grade can not be found.");
+            while(high >= low){
+                mid = (low + high)/2;
+                if(y < array[mid]){
+                    high = mid -1;
+                }
+                else if(y == array[mid]){
+                   System.out.println(y+" was found in the list with "+i+" iterations.");
+                   break;
+                }
+                else{
+                    low = mid+1;
+                }
+               i++;
             }
-            return i;
+           if(array[mid]!=y){
+                System.out.println(y+" was not found in the list with "+i+" iterations");
+            } 
             
         }
-
+        
         
          public static int linear2(int[]array2, int z ){ //if the entered grade equal to the a grade in the array, print out the following
             boolean incorrectinput = true;
@@ -97,13 +105,12 @@ public class CSE2Linear{
             for(i=0; i<15; i++){
                 if(z == array2[i]){
                     incorrectinput =false; 
-                    System.out.println("The grade is found.");
-                    System.out.println("The number of iterations used is: "+i);
+                    System.out.println(z + " was found in the list with "+i+" iterations.");
                 }
             }
             
             if (incorrectinput == true){
-                System.out.println("The grade can not be found.");
+                System.out.println(z + " was not found in the list with "+i+" iterations.");
             }
             
         
