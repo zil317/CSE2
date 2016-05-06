@@ -54,7 +54,7 @@ public class Holoporter{  // main method provided
     System.out.println("Please input a code to a search in the format of XXYYYY: "); //ask user for input 
     code = scan.next();
     
-/*    boolean incorrectinput1= true;
+    boolean incorrectinput1= true;
     while(incorrectinput1){
         int N= code.length();
         if(N==6){
@@ -65,7 +65,7 @@ public class Holoporter{  // main method provided
             code= scan.next();
         }
     }
-    */
+    
     
     
     boolean incorrectinput2 = true;
@@ -233,7 +233,7 @@ public class Holoporter{  // main method provided
           
           
           public static void sampling(String [][][] newarray, String code){// the method takes in a 3D array and a specified code
-          boolean incorrectinput= false;
+          boolean incorrectinput= true;
               for(int i=0; i<newarray.length; i++){
                   for(int j=0; j< newarray[i].length; j++){
                       for(int k=0; k< newarray[i][j].length; k++){
@@ -242,14 +242,11 @@ public class Holoporter{  // main method provided
                               System.out.println(i+","+j+","+k); // if the code is found in the array, print out index i, i and k
                               incorrectinput=false;
                           }
-                          else{
-                              incorrectinput = true;  //if the code is not found, print out error message
-                          }
                       }
                   }
               }
-              if(incorrectinput=true){ 
-              System.out.println("Code not found.");
+              if(incorrectinput == true){ 
+              System.out.println("Code not found.");   //if the code is not found, print out error message
               }
           }
           
