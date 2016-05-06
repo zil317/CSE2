@@ -1,13 +1,13 @@
 
-import java.util.Random;
+import java.util.*;
 public class lab09{
     //main method required for the every Java prgram 
   
         
-        public static String Mymethod1(int randomInt){
+        public static String Mymethod1(){
             
         Random randomGenerator = new Random();
-        randomInt = randomGenerator.nextInt(10);    
+        int randomInt = randomGenerator.nextInt(10);    
 
         String Adjectives= "";
         switch(randomInt){
@@ -37,8 +37,9 @@ public class lab09{
         }
         
         
-        public static String Mymethod2(int randomInt){
-            randomInt = randomGenerator.nextInt(10);
+        public static String Mymethod2(){
+            Random randomGenerator = new Random();
+           int randomInt = randomGenerator.nextInt(10);
              String Nouns= "";
         switch(randomInt){
             case 0: Nouns = "dog";
@@ -65,8 +66,9 @@ public class lab09{
         return Nouns;
         }
         
-        public static String Mymethod3(int randomInt){
-            randomInt = randomGenerator.nextInt(10);
+        public static String Mymethod3(){
+            Random randomGenerator = new Random();
+            int randomInt = randomGenerator.nextInt(10);
              String Verbs= "";
         switch(randomInt){
             case 0: Verbs = "went";
@@ -93,8 +95,9 @@ public class lab09{
         return Verbs;
         }
         
-        public static String Mymethod4(int randomInt){
-            randomInt = randomGenerator.nextInt(10);
+        public static String Mymethod4(){
+            Random randomGenerator = new Random();
+            int randomInt = randomGenerator.nextInt(10);
              String object= "";
         switch(randomInt){
             case 0: object = "cat";
@@ -123,9 +126,34 @@ public class lab09{
         
         
           public static void main(String[] args){
-              boolean incorrectinput = false;
-              while incorrectinput{
-                  System.out.print("The"+ Adjectives + Nouns + Verbs + "the" + Adjectives + Nouns)
+              Scanner scan=new Scanner(System.in);
+              String x="";
+             String Adjectives1 = Mymethod1();
+             String Adjectives2 = Mymethod1();
+             String Nouns = Mymethod2();
+             String Verbs = Mymethod3();
+             String object = Mymethod4();
+             System.out.println("The" + " " + Adjectives1 + " " + Nouns +" " + Verbs +" " +"the"+ " " + Adjectives2 + " " + object);
+              boolean incorrectinput = true;
+              
+              System.out.println("Would you want another sentence? ");
+              x= scan.next();
+    
+              while (incorrectinput){
+                  
+                  Adjectives1 = Mymethod1();
+                  Adjectives2 = Mymethod1();
+                  Nouns = Mymethod2();
+                  Verbs = Mymethod3();
+                  object = Mymethod4();
+                  if(x.equals("y")){
+                      System.out.println("The" + " " + Adjectives1 + " " + Nouns +" " + Verbs +" " +"the"+ " " + Adjectives2 + " " + object);
+                      System.out.println("Would you want another sentence? ");
+                      x= scan.next();
+                  }
+                  else{
+                      incorrectinput=false;
+                  }
               }
         
         
